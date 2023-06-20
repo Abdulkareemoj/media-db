@@ -1,25 +1,12 @@
-<script context = "module">
-export async function load({fetch}){
-const res = fetch(`//add req`)
-const data = await  res.json()
-if (res.ok){
-    return{
-        props: { req: data.results}
-    }
-}
-}
+<h1>
+ <a href="/anime">Anime</a>   
+</h1>
 
-</script>
+<h1>
+   <a href="/movies">Movies</a> 
+</h1>
 
-<script>
-    import Movies from "../components/movies.svelte"
-    import Anime from "../components/anime.svelte"
-    import Series from "../components/series.svelte"
+<h1>
+   <a href="/series">Series</a> 
+</h1>
 
-
-    export let req
-</script>
-
-<Movies movie = {req}/>
-<Anime anime = {req}/>
-<Series series = {req}/>
