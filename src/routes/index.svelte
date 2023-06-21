@@ -1,12 +1,15 @@
-<h1>
+<h1>Welcome</h1>
+
+<div>
+<h2>
  <a href="/anime">Anime</a>   
-</h1>
+</h2>
 
-<h1>
+<h2>
    <a href="/movies">Movies</a> 
-</h1>
+</h2>
 
-<h1>
+<h2>
    <a href="/series">Series</a> 
-</h1>
-
+</h2>
+</div>
