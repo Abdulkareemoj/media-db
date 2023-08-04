@@ -1,15 +1,16 @@
 <script>
-	import AnimeCard from "./cards/AnimeCard.svelte";
-
-    export let AnimeCard
-
+    export let animes
 </script>
-<h3>AnimeCard</h3>
-<div>
-    <div>
-{#each AnimeCard as anime}
-    <AnimeCard />
 
-{/each}
-    </div>
+<div>
+    <a href={"/anime/" + anime.id}>
+        <img src={'link to image' + anime.poster_path} alt={animes.title} >
+    </a>
+<div>
+    <h2>
+    {anime.title}
+</h2>    
+    <p>{animes.release_date}</p>
+    <h2></h2>
+</div>
 </div>

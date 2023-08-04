@@ -1,15 +1,16 @@
 <script>
-	import SeriesCard from "./cards/MovieCard.svelte";
-
     export let series
-
 </script>
-<h3>series</h3>
-<div>
-    <div>
-{#each series as series}
-    <SeriesCard />
 
-{/each}
-    </div>
+<div>
+    <a href={"/series/" + series.id}>
+        <img src={'link to image' + series.poster_path} alt={series.title} >
+    </a>
+<div>
+    <h2>
+    {series.title}
+</h2>    
+    <p>{series.release_date}</p>
+    <h2></h2>
+</div>
 </div>
