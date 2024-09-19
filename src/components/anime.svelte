@@ -1,4 +1,4 @@
-<script context = "module">
+<script>
 		import AnimeCard from "./cards/AnimeCard.svelte";
 
 export async function load({fetch}){

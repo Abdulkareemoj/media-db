@@ -1,4 +1,4 @@
-<script context = "module">
+<script>
 	import axios from 'axios';
 	import PopularMovies from '../../components/popular/movies/PopularMovies.svelte';
 

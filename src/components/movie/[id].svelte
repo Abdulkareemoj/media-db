@@ -1,4 +1,4 @@
-<script context = "module">
+<script>
 export async function load({fetch, params }){
 const res = fetch(`//add req`)
 const movieDetail = await  res.json()

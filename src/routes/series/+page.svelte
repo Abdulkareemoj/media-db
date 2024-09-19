@@ -1,4 +1,4 @@
-<script context = "module">
+<script>
 		import SCard from "../../components/cards/SeriesCard.svelte";
 
 export async function load({fetch}){

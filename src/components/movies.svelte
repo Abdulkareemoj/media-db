@@ -1,4 +1,4 @@
-<script context = "module">
+<script>
 		import MovieCard from "./cards/MovieCard.svelte";
 
 export async function load({fetch}){

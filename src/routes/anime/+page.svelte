@@ -1,4 +1,4 @@
-<script context = "module">
+<script>
 		import ACard from "../../components/cards/AnimeCard.svelte";
 
 
