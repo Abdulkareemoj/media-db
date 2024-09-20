@@ -9,16 +9,16 @@
 
 	const navItems = [
 		{ href: "/", label: "Home" },
-		{ href: "/anime", label: "Anime" },
-		{ href: "/Series", label: "Series" },
+		{ href: "/new", label: "New Releases" },
+		{ href: "/popular", label: "Popular" },
 		{ href: "/Movies", label: "Movies" },
 	];
 
 	const mobileNavItems = [
 		{ href: "/", label: "Strmr" },
-		{ href: "/anime", label: "Anime" },
+		{ href: "/new", label: "New Releases" },
 		{ href: "/movies", label: "Shorts" },
-		{ href: "/series", label: "Series" },
+		{ href: "/popular", label: "Popular" },
 	];
 
 	function toggleSheet() {

@@ -5,4 +5,5 @@
 </script>
 <ModeWatcher />
 <Header />
+<div></div>
 <slot />
