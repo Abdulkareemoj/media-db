@@ -4,14 +4,14 @@
   import axios from "axios";
   import { page } from "$app/stores";
   import type { Writable } from "svelte/store";
-
+import Img from '@zerodevx/svelte-img'
   let manga: any;
   const fetcher = (url: string) => axios.get(url).then(res => res.data);
 
-  // Get the anime ID from the URL
-  $: animeId = ($page as unknown as Writable<{ params: { id: string } }>).params.id;
+  // Get the manga ID from the URL
+  $: mangaId = ($page as unknown as Writable<{ params: { id: string } }>).params.id;
 
-  // Use SWR to fetch anime details
+  // Use SWR to fetch manga details
   const { data, error } = useSWR(`https://api.jikan.moe/v4/manga/${mangaId}/full`, fetcher);
 
   onMount(() => {
@@ -37,7 +37,7 @@
 {:else}
   <div>
     <h1>{manga.title}</h1>
-    <img src={manga.images.jpg.image_url} alt={manga.title} />
+    <Img src={manga.images.jpg.image_url} alt={manga.title} />
     <p>{manga.synopsis}</p>
     <!-- Add more details as needed -->
   </div>

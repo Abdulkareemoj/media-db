@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import { Card, CardContent } from "$lib/components/ui/card";
 	import { TvMinimal, Film, Clapperboard, Book, Newspaper } from "svelte-lucide";
-
+import SvelteSeo from "svelte-seo";
 	const cards = [
 		{ title: "Anime", href: "/anime", icon: TvMinimal },
 		{ title: "Movies", href: "/movies", icon: Clapperboard },
@@ -10,7 +10,10 @@
 		{ title: "News", href: "/news", icon: Newspaper },
 	];
 </script>
-
+<SvelteSeo
+  title="Simple page title"
+  description="Simple description about a page"
+/>
 <div class="container mx-auto px-4 py-14">
 	<h1 class="text-4xl font-bold mb-12 text-center">Welcome</h1>
 	<div class="flex flex-col items-center">

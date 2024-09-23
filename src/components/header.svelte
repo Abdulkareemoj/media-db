@@ -11,13 +11,13 @@
 		{ href: "/", label: "Home" },
 		{ href: "/new", label: "New Releases" },
 		{ href: "/popular", label: "Popular" },
-		{ href: "/Movies", label: "Movies" },
+		{ href: "/search", label: "Search" },
 	];
 
 	const mobileNavItems = [
 		{ href: "/", label: "Strmr" },
 		{ href: "/new", label: "New Releases" },
-		{ href: "/movies", label: "Shorts" },
+		{  href: "/search", label: "Search" },
 		{ href: "/popular", label: "Popular" },
 	];
 
