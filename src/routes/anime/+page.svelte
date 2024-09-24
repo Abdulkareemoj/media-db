@@ -7,7 +7,7 @@
 	const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 	// Use SWR to fetch anime data
-	const { data, error } = useSWR(`https://api.simkl.com/anime/trending/?extended=overview,metadata,tmdb,genres,trailer&client_id=${import.meta.env.VITE_SIMKL_KEY}`, fetcher);
+	const { data, error } = useSWR(`https://api.simkl.com/anime/trending/?extended=overview,metadata,tmdb,genres,trailer&client_id=${import.meta.env.VITE_SIMKL_ID}`, fetcher);
 
 	let animes: any;
 	let fetchError: any;
