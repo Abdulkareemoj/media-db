@@ -15,6 +15,8 @@
 	// Subscribe to the store
 	$: mangas = $data?.data; // Access the nested data property
 	$: fetchError = $error;
+	  // Log the data to inspect its structure
+  $: console.log(mangas);
 </script>
 
 <div class="container mx-auto px-4 py-8">

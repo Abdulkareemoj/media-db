@@ -7,7 +7,7 @@
 	const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 	// Use SWR to fetch anime data
-	const { data, error } = useSWR("https://api.jikan.moe/v4/top/anime", fetcher);
+	const { data, error } = useSWR(`https://api.simkl.com/anime/trending/?extended=overview,metadata,tmdb,genres,trailer&client_id=${import.meta.env.VITE_SIMKL_KEY}`, fetcher);
 
 	let animes: any;
 	let fetchError: any;
@@ -15,6 +15,8 @@
 	// Subscribe to the store
 	$: animes = $data?.data; // Access the nested data property
 	$: fetchError = $error;
+	  // Log the data to inspect its structure
+  $: console.log('ANIME>>>>>', animes);
 </script>
 
 <div class="container mx-auto px-4 py-8">
