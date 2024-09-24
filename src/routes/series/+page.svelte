@@ -1,35 +1,37 @@
 <script lang="ts">
-	import { useSWR } from "sswr";
-	import SeriesCard from "../../components/cards/SeriesCard.svelte";
-	import axios from "axios";
+  import { useSWR } from "sswr";
+  import SeriesCard from "../../components/cards/SeriesCard.svelte";
+  import axios from "axios";
 
-	// Fetcher function using Axios
-	const fetcher = (url: string) => axios.get(url).then((res) => res.data);
+  // Fetcher function using Axios
+  const fetcher = async (url: string) => {
+    try {
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      throw error;
+    }
+  };
 
-	
-  // Use SWR to fetch series data
-  const { data, error } = useSWR("https://api.tvmaze.com/schedule", fetcher);
 
-  let serials: any[] = [];
-  let fetchError: any;
+  // Use SWR to fetch serials data
+  const { data, error } = useSWR(`https://api.simkl.com/tv/airing?date?sort=time&client_id=${import.meta.env.VITE_SIMKL_ID}`, fetcher);
 
-  // Subscribe to the store
-  $: serials = $data || []; // Ensure serials is an array
-  $: fetchError = $error;  
-  
-  // Log the data to inspect its structure
-  $: console.log(serials);
+  // Log the data and errors to inspect
+  $: console.log('Data>>>>>', $data);
+  $: console.log('Fetch Error:', $error);
 </script>
 
 <div class="container mx-auto px-4 py-8">
-  {#if fetchError}
-    <p class="text-center text-red-500">Error loading data: {fetchError.message}</p>
-  {:else if serials.length === 0}
+  {#if $error}
+    <p class="text-center text-red-500">Error loading data: {$error.message}</p>
+  {:else if !$data}
     <p class="text-center">Loading...</p>
   {:else}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {#each serials as series}
-        <SeriesCard {series} />
+      {#each $data as serials}
+        <SeriesCard {serials} />
       {/each}
     </div>
   {/if}

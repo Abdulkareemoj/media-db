@@ -1,16 +1,16 @@
 <script>
-	export let series;
+	export let serials;
 </script>
 
 <div>
-	<a href={'/series/' + series.show.id}>
+	<a href={'/serials/' + serials.show.id}>
 		<img
-			src={series.show.image ? series.show.image.medium : 'default_image_url'}
-			alt={series.show.name}
+			src={serials.show.image ? serials.show.image.medium : 'default_image_url'}
+			alt={serials.show.name}
 		/>
 	</a>
 	<div>
-		<h2>{series.show.name}</h2>
-		<p>{series.airdate}</p>
+		<h2>{serials.show.name}</h2>
+		<p>{serials.airdate}</p>
 	</div>
 </div>
