@@ -16,11 +16,8 @@
 
 
   // Use SWR to fetch movie data
-  const { data, error } = useSWR(`https://api.simkl.com/movies/trending/interval?client_id=${import.meta.env.VITE_SIMKL_ID}`, fetcher);
+  const { data, error } = useSWR(`https://api.simkl.com/movies/trending/?extended=overview,theater,metadata,tmdb,genres&client_id=${import.meta.env.VITE_SIMKL_ID}`, fetcher);
 
-  // Log the data and errors to inspect
-  $: console.log('Data>>>>>', $data);
-  $: console.log('Fetch Error:', $error);
 </script>
 
 <div class="container mx-auto px-4 py-8">
